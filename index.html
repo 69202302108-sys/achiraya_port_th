@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achiraya Wangtaphan - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Prompt & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deep: {
+                            900: '#0B132B',
+                            800: '#1C2541',
+                            700: '#2A3C5A',
+                            600: '#3A506B',
+                            accent: '#48CAE4',
+                            light: '#E0E1DD'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Prompt', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Prompt', 'Inter', sans-serif;
+            background-color: #0B132B;
+            color: #E0E1DD;
+        }
+        .glass-card {
+            background: rgba(28, 37, 65, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(72, 202, 228, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(72, 202, 228, 0.2);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #48CAE4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B132B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1C2541;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #48CAE4;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-deep-accent selection:text-deep-900">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#hero" class="text-xl font-bold tracking-wider text-white hover:text-deep-accent transition-colors">
+                    ACHIRAYA<span class="text-deep-accent">.</span>
+                </a>
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#about" class="hover:text-deep-accent transition-colors">เกี่ยวกับฉัน</a>
+                    <a href="#education" class="hover:text-deep-accent transition-colors">ประวัติการศึกษา</a>
+                    <a href="#skills" class="hover:text-deep-accent transition-colors">ทักษะ & ความสามารถ</a>
+                    <a href="#achievements" class="hover:text-deep-accent transition-colors">กิจกรรมที่ภาคภูมิใจ</a>
+                    <a href="#contact" class="hover:text-deep-accent transition-colors">ติดต่อ</a>
+                </div>
+                <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-card px-4 pt-2 pb-4 space-y-2 border-t border-white/5">
+            <a href="#about" class="block py-2 text-sm hover:text-deep-accent">เกี่ยวกับฉัน</a>
+            <a href="#education" class="block py-2 text-sm hover:text-deep-accent">ประวัติการศึกษา</a>
+            <a href="#skills" class="block py-2 text-sm hover:text-deep-accent">ทักษะ & ความสามารถ</a>
+            <a href="#achievements" class="block py-2 text-sm hover:text-deep-accent">กิจกรรมที่ภาคภูมิใจ</a>
+            <a href="#contact" class="block py-2 text-sm hover:text-deep-accent">ติดต่อ</a>
+        </div>
+    </nav>
+
+    <header id="hero" class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-deep-accent/10 border border-deep-accent/20 text-deep-accent text-xs font-semibold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-deep-accent animate-pulse"></span>
+                    นักศึกษาสาธารณสุขชุมชน
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                    สวัสดีค่ะ, ฉันชื่อ <br>
+                    <span class="text-gradient">นางสาวอชิรญา วังทะพันธ์</span>
+                </h1>
+                <p class="text-lg text-gray-300 font-light max-w-xl">
+                    ชื่อเล่น "เนเน่" ปัจจุบันกำลังศึกษา ณ วิทยาลัยสาธารณสุขสิรินธร จังหวัดขอนแก่น คณะสาธารณสุขศาสตรบัณฑิต สาขาวิชาสาธารณสุขชุมชน
+                </p>
+                <div class="p-4 rounded-xl glass-card border-l-4 border-deep-accent italic text-gray-300">
+                    "<span class="text-white font-medium">ความพยายามคือหนทางแห่งความสำเร็จ</span>"
+                </div>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#contact" class="px-6 py-3 rounded-xl bg-deep-accent text-deep-900 font-semibold hover:bg-opacity-90 transition-all shadow-lg shadow-deep-accent/20 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> ติดต่อฉัน
+                    </a>
+                    <a href="#achievements" class="px-6 py-3 rounded-xl glass-card text-white hover:bg-white/10 transition-all border border-white/10 flex items-center gap-2">
+                        <i class="fa-solid fa-trophy text-deep-accent"></i> ดูผลงาน & กิจกรรม
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Profile Card with Direct Embedded Image -->
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm rounded-3xl glass-card p-6 flex flex-col items-center justify-center text-center overflow-hidden border border-white/10 group shadow-2xl">
+            <!-- Profile Card with Custom Minimal SVG Avatar -->
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm rounded-3xl glass-card p-6 flex flex-col items-center justify-center text-center overflow-hidden border border-white/10 group shadow-2xl">
+                    <div class="absolute -top-10 -right-10 w-48 h-48 bg-deep-accent/20 rounded-full blur-3xl group-hover:bg-deep-accent/30 transition-all"></div>
+                    
+                    <!-- Avatar Illustration Frame -->
+                    <div class="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden mb-5 border-2 border-deep-accent/50 shadow-2xl bg-gradient-to-br from-deep-800 to-deep-900 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                        <svg class="w-32 h-32 text-deep-accent/80" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-3.8-.85-5.05-2.2.04-1.68 3.37-2.6 5.05-2.6s5.01.92 5.05 2.6C15.8 19.15 14.03 20 12 20z"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-3">
+                            <span class="text-xs text-deep-accent font-medium"><i class="fa-solid fa-user mr-1"></i>อชิรญา วังทะพันธ์</span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white tracking-wide">เนเน่ (Nene)</h3>
+                    <p class="text-xs text-deep-accent font-medium tracking-wider uppercase mt-1">Achiraya Wangtaphan</p>
+                    
+                    <div class="mt-4 pt-4 border-t border-white/10 w-full flex justify-center gap-3 text-gray-300">
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-deep-800/80 border border-white/5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-cake-candles text-deep-accent"></i> อายุ 19 ปี
+                        </span>
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-deep-800/80 border border-white/5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-droplet text-red-400"></i> หมู่เลือด B+
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-1 bg-deep-accent rounded-full"></div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">ข้อมูลส่วนตัว & ครอบครัว</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="md:col-span-2 glass-card rounded-2xl p-6 sm:p-8 glass-card-hover">
+                <h3 class="text-lg font-semibold text-deep-accent mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-address-card"></i> รายละเอียดข้อมูลส่วนตัว
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <div class="space-y-1">
+                        <p class="text-gray-400">ชื่อ-นามสกุล:</p>
+                        <p class="font-medium text-white">นางสาวอชิรญา วังทะพันธ์</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-gray-400">ชื่อภาษาอังกฤษ:</p>
+                        <p class="font-medium text-white">Achiraya Wangtaphan</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-gray-400">วัน/เดือน/ปีเกิด:</p>
+                        <p class="font-medium text-white">23 พฤศจิกายน พ.ศ.2549 (อายุ 19 ปี)</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-gray-400">แผนการเรียนมัธยม:</p>
+                        <p class="font-medium text-white">วิทยาศาสตร์ - คณิตศาสตร์ (Sci-Math)</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-gray-400">ศาสนา / สัญชาติ:</p>
+                        <p class="font-medium text-white">พุทธ / ไทย</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-gray-400">หมู่เลือด:</p>
+                        <p class="font-medium text-white">B+</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-white/5">
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3">งานอดิเรก (Hobbies)</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-deep-800 text-gray-200 text-xs flex items-center gap-2 border border-white/5">
+                            <i class="fa-solid fa-music text-deep-accent"></i> ฟังเพลง
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-deep-800 text-gray-200 text-xs flex items-center gap-2 border border-white/5">
+                            <i class="fa-solid fa-tv text-deep-accent"></i> ดูซีรีย์เกี่ยวกับทางการแพทย์
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-deep-800 text-gray-200 text-xs flex items-center gap-2 border border-white/5">
+                            <i class="fa-solid fa-guitar text-deep-accent"></i> ดีดกีต้าร์
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 glass-card-hover flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-semibold text-deep-accent mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-users"></i> ข้อมูลครอบครัว
+                    </h3>
+                    <div class="space-y-4 text-sm">
+                        <div class="p-3 rounded-xl bg-deep-800/50 border border-white/5">
+                            <p class="text-xs text-gray-400">บิดา</p>
+                            <p class="font-medium text-white">นายวัชรากรณ์ วังทะพันธ์</p>
+                            <p class="text-xs text-gray-300 mt-1">อายุ 50 ปี • อาชีพ รับราชการ</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-deep-800/50 border border-white/5">
+                            <p class="text-xs text-gray-400">มารดา</p>
+                            <p class="font-medium text-white">นางพันธ์ณี วังทะพันธ์</p>
+                            <p class="text-xs text-gray-300 mt-1">อายุ 48 ปี • อาชีพ ผู้ใหญ่บ้าน</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-deep-800/50 border border-white/5">
+                            <p class="text-xs text-gray-400">พี่ชาย</p>
+                            <p class="font-medium text-white">นายอาทิตย์มณฑล วังทะพันธ์</p>
+                            <p class="text-xs text-gray-300 mt-1">อายุ 22 ปี</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-1 bg-deep-accent rounded-full"></div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">ประวัติการศึกษา</h2>
+        </div>
+
+        <div class="relative border-l-2 border-deep-600/50 ml-4 md:ml-6 space-y-8">
+            <div class="relative pl-6 md:pl-8">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-deep-accent border-4 border-deep-900"></div>
+                <div class="glass-card rounded-xl p-5 glass-card-hover border-l-2 border-l-deep-accent">
+                    <span class="text-xs font-semibold text-deep-accent bg-deep-accent/10 px-2.5 py-0.5 rounded">ปัจจุบัน</span>
+                    <h3 class="text-lg font-bold text-white mt-1">ระดับปริญญาตรี</h3>
+                    <p class="text-gray-300 text-sm">วิทยาลัยสาธารณสุขสิรินธร จังหวัดขอนแก่น</p>
+                    <p class="text-xs text-gray-400 mt-1">คณะสาธารณสุขศาสตรบัณฑิต สาขาวิชาสาธารณสุขชุมชน</p>
+                </div>
+            </div>
+
+            <div class="relative pl-6 md:pl-8">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-deep-600 border-4 border-deep-900"></div>
+                <div class="glass-card rounded-xl p-5 glass-card-hover">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-bold text-white">ชั้นมัธยมศึกษาตอนปลาย</h3>
+                            <p class="text-gray-300 text-sm">โรงเรียนนาแกสามัคคีวิทยา</p>
+                        </div>
+                        <span class="text-sm font-semibold text-deep-accent bg-white/5 px-3 py-1 rounded-lg">GPAX 3.94</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative pl-6 md:pl-8">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-deep-600 border-4 border-deep-900"></div>
+                <div class="glass-card rounded-xl p-5 glass-card-hover">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-bold text-white">ชั้นมัธยมศึกษาตอนต้น</h3>
+                            <p class="text-gray-300 text-sm">โรงเรียนนาแกสามัคคีวิทยา</p>
+                        </div>
+                        <span class="text-sm font-semibold text-deep-accent bg-white/5 px-3 py-1 rounded-lg">GPAX 3.80</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative pl-6 md:pl-8">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-deep-600 border-4 border-deep-900"></div>
+                <div class="glass-card rounded-xl p-5 glass-card-hover">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-bold text-white">ชั้นประถมศึกษา</h3>
+                            <p class="text-gray-300 text-sm">โรงเรียนอนุบาลนาแกผดุงราชกิจเจริญ</p>
+                        </div>
+                        <span class="text-sm font-semibold text-deep-accent bg-white/5 px-3 py-1 rounded-lg">GPAX 3.77</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-1 bg-deep-accent rounded-full"></div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">ทักษะ & ความถนัด</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass-card rounded-2xl p-6 sm:p-8 glass-card-hover">
+                <h3 class="text-lg font-semibold text-deep-accent mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-star"></i> ความสามารถพิเศษ
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-3 rounded-xl bg-deep-800/40 border border-white/5">
+                        <div class="w-10 h-10 rounded-lg bg-deep-accent/10 flex items-center justify-center text-deep-accent">
+                            <i class="fa-solid fa-guitar text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white">เล่นกีต้าร์</p>
+                            <p class="text-xs text-gray-400">ดนตรีและสันทนาการ</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-3 rounded-xl bg-deep-800/40 border border-white/5">
+                        <div class="w-10 h-10 rounded-lg bg-deep-accent/10 flex items-center justify-center text-deep-accent">
+                            <i class="fa-solid fa-file-powerpoint text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white">ทำสื่อการนำเสนองานต่างๆ</p>
+                            <p class="text-xs text-gray-400">การจัดทำสไลด์และสื่อนำเสนอข้อมูล</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-3 rounded-xl bg-deep-800/40 border border-white/5">
+                        <div class="w-10 h-10 rounded-lg bg-deep-accent/10 flex items-center justify-center text-deep-accent">
+                            <i class="fa-solid fa-video text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white">ตัดต่อคลิปวิดีโอ</p>
+                            <p class="text-xs text-gray-400">การสร้างวิดีโอเนื้อหาและมัลติมีเดีย</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 glass-card-hover">
+                <h3 class="text-lg font-semibold text-deep-accent mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-laptop-code"></i> ความถนัดด้านโปรแกรม
+                </h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-deep-800/60 border border-white/5 flex flex-col items-center justify-center text-center group hover:border-deep-accent/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <p class="font-semibold text-white text-sm">Canva</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-deep-800/60 border border-white/5 flex flex-col items-center justify-center text-center group hover:border-deep-accent/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-file-word"></i>
+                        </div>
+                        <p class="font-semibold text-white text-sm">MS Word</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-deep-800/60 border border-white/5 flex flex-col items-center justify-center text-center group hover:border-deep-accent/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <p class="font-semibold text-white text-sm">CapCut</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+        <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-1 bg-deep-accent rounded-full"></div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">กิจกรรมและรางวัลที่ภาคภูมิใจ</h2>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card rounded-2xl p-6 glass-card-hover flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute -right-6 -bottom-6 text-yellow-500/10 text-8xl">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 text-xs font-semibold mb-4">
+                        <i class="fa-solid fa-medal"></i> รางวัลเหรียญทอง
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">ประกวดโครงงานวิทยาศาสตร์</h3>
+                    <p class="text-xs text-deep-accent mb-3">ประเภททดลอง ระดับชั้น ม.4-ม.6</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        งานศิลปหัตถกรรมนักเรียน ระดับเขตพื้นที่การศึกษา ครั้งที่ 70 ปีการศึกษา 2565
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 text-xs text-gray-400 flex items-center gap-1.5">
+                    <i class="fa-regular fa-calendar"></i> 2 - 3 ธันวาคม พ.ศ. 2565
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 glass-card-hover flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute -right-6 -bottom-6 text-yellow-500/10 text-8xl">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 text-xs font-semibold mb-4">
+                        <i class="fa-solid fa-trophy"></i> เหรียญทอง รองชนะเลิศอันดับ 2
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">ประกวดโครงงานคุณธรรม</h3>
+                    <p class="text-xs text-deep-accent mb-3">ระดับชั้น ม.4 - ม.6</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        งานศิลปหัตถกรรมนักเรียน ระดับเขตพื้นที่การศึกษา ครั้งที่ 71 ปีการศึกษา 2566
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 text-xs text-gray-400 flex items-center gap-1.5">
+                    <i class="fa-regular fa-calendar"></i> 19 - 21 ตุลาคม พ.ศ. 2566
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 glass-card-hover flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute -right-6 -bottom-6 text-yellow-500/10 text-8xl">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 text-xs font-semibold mb-4">
+                        <i class="fa-solid fa-medal"></i> รางวัลเหรียญทอง
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">แข่งขันอัจฉริยภาพทางวิทยาศาสตร์</h3>
+                    <p class="text-xs text-deep-accent mb-3">ระดับชั้น ม.4-ม.6</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        งานศิลปหัตถกรรมนักเรียน ระดับเขตพื้นที่การศึกษา ครั้งที่ 72 ปีการศึกษา 2567
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 text-xs text-gray-400 flex items-center gap-1.5">
+                    <i class="fa-regular fa-calendar"></i> 29 - 30 พฤศจิกายน พ.ศ. 2567
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-1 bg-deep-accent rounded-full"></div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">ช่องทางการติดต่อ</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <div class="md:col-span-5 space-y-4">
+                <a href="tel:0837098879" class="glass-card p-4 rounded-xl flex items-center gap-4 glass-card-hover block">
+                    <div class="w-12 h-12 rounded-xl bg-deep-accent/10 flex items-center justify-center text-deep-accent shrink-0">
+                        <i class="fa-solid fa-phone text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">เบอร์โทรศัพท์</p>
+                        <p class="font-medium text-white">083-709-8879</p>
+                    </div>
+                </a>
+
+                <a href="mailto:achiraya23nn@gmail.com" class="glass-card p-4 rounded-xl flex items-center gap-4 glass-card-hover block">
+                    <div class="w-12 h-12 rounded-xl bg-deep-accent/10 flex items-center justify-center text-deep-accent shrink-0">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                    </div>
+                    <div class="overflow-hidden">
+                        <p class="text-xs text-gray-400">อีเมล</p>
+                        <p class="font-medium text-white truncate">achiraya23nn@gmail.com</p>
+                    </div>
+                </a>
+
+                <div class="glass-card p-4 rounded-xl flex items-start gap-4 glass-card-hover">
+                    <div class="w-12 h-12 rounded-xl bg-deep-accent/10 flex items-center justify-center text-deep-accent shrink-0">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">ที่อยู่ปัจจุบัน</p>
+                        <p class="font-medium text-white text-sm leading-relaxed">
+                            บ้านเลขที่ 166 หมู่ 9 บ้านโนนสามัคคี ตำบลบ้านแก้ง อำเภอนาแก จังหวัดนครพนม 48130
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-7 glass-card p-6 sm:p-8 rounded-2xl glass-card-hover flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-hashtag text-deep-accent"></i> โซเชียลมีเดีย
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-deep-800/50 border border-white/5 flex flex-col items-center text-center">
+                            <i class="fa-brands fa-facebook text-3xl text-blue-400 mb-2"></i>
+                            <p class="text-xs text-gray-400">Facebook</p>
+                            <p class="text-sm font-medium text-white mt-1">Achirata Wangtaphan</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-deep-800/50 border border-white/5 flex flex-col items-center text-center">
+                            <i class="fa-brands fa-instagram text-3xl text-pink-400 mb-2"></i>
+                            <p class="text-xs text-gray-400">Instagram</p>
+                            <p class="text-sm font-medium text-white mt-1">nxx.achiii</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-deep-800/50 border border-white/5 flex flex-col items-center text-center">
+                            <i class="fa-brands fa-line text-3xl text-green-400 mb-2"></i>
+                            <p class="text-xs text-gray-400">Line ID</p>
+                            <p class="text-sm font-medium text-white mt-1">achirayann</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-white/5 text-center sm:text-left">
+                    <p class="text-xs text-gray-400">
+                        พร้อมสำหรับการร่วมงานและการเรียนรู้สิ่งใหม่ๆ ติดต่อได้ตลอดเวลาค่ะ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-white/5 text-center text-xs text-gray-400">
+        <p>© 2026 Achiraya Wangtaphan. Designed with Minimal Deep Blue Style.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
